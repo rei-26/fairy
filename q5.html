@@ -3,51 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fairy Quiz - Q5</title>
-  <style>
-    body {
-      font-family: 'Papyrus', fantasy;
-      background: linear-gradient(to bottom right, #d8f3dc, #b7e4c7);
-      color: #344e41;
-      padding: 2rem;
-    }
-    .question {
-      font-size: 1.4rem;
-      margin-bottom: 1.5rem;
-    }
-    .options a {
-      display: block;
-      margin: 1rem 0;
-      padding: 1rem;
-      background-color: #fefae0;
-      border: 2px solid #606c38;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #344e41;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-    .options a:hover {
-      background-color: #d4a373;
-      color: white;
-    }
-  </style>
+  <title>Fairy Quiz – Question 5</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="question">
+  <div class="question-container">
     <p>
-      After the storm, the forest smells like fresh pine and possibility.  
+       After the storm, the forest smells like fresh pine and possibility.  
       You discover a hidden scroll tucked into a tree knot.  
       It reads:  
       <br><br>
       <em>“Fairy magic flows best through…”</em>
     </p>
+    <div class="choices">
+      <button onclick="saveAnswer('A');">🏡 Creation</button>
+      <button onclick="saveAnswer('B');">💗 Connection</button>
+      <button onclick="saveAnswer('C');">🔮 Curiosity</button>
+      <button onclick="saveAnswer('D');">🌙 Calmness</button>
+    </div>
   </div>
-  <div class="options">
-    <a href="q6.html">🏡 Creation</a>
-    <a href="q6.html">💗 Connection</a>
-    <a href="q6.html">🔮 Curiosity</a>
-    <a href="q6.html">🌙 Calmness</a>
-  </div>
+
+  <script>
+    function saveAnswer(choice) {
+      let answers = JSON.parse(localStorage.getItem('fairyAnswers') || '[]');
+      answers.push(choice);
+      localStorage.setItem('fairyAnswers', JSON.stringify(answers));
+      window.location.href = 'q6.html'; // next question
+    }
+  </script>
 </body>
 </html>
