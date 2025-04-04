@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fairy Quiz - Q10</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <p>The seasons shift. Autumn’s chill curls in.<br>
+    <span class="quote">What does your fairy soul crave now?</span></p>
+
+    <div class="options">
+      <a href="q11.html">🕯️ Stillness, to reflect and journal by lantern-light</a>
+      <a href="q11.html">🍃 Movement, flying fast to keep warm</a>
+      <a href="q11.html">🐿️ Warmth, sitting close with your forest friends</a>
+      <a href="q11.html">🔥 Firelight, dancing and glowing through the falling leaves</a>
+    </div>
+  </div>
+</body>
+</html>
