@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Fairy Quiz - Question 2</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link your styles -->
-  <script src="script.js" defer></script> <!-- Link your JavaScript -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Question 2 (Page 2) -->
-  <div class="question" id="question-2">
-    <p class="question-text">As you wander, you hear a soft sobbing coming from a curled leaf. A tiny caterpillar is stuck, tangled in its own silk.</p>
-    <p class="question-text">💬 “Help me... I don’t want to miss the Moth Ball!”</p>
-
-    <div class="options">
-      <button class="option" onclick="nextQuestion(3)">A) Gently untangle it with a whispered lullaby (Animal, Nurturer)</button>
-      <button class="option" onclick="nextQuestion(3)">B) Create a mini-sling from vines to carry it (Tinker, Earth)</button>
-      <button class="option" onclick="nextQuestion(3)">C) Cheer it up with a silly glow dance (Light, Expressive)</button>
-      <button class="option" onclick="nextQuestion(3)">D) Fly to get help, fast as the wind (Fast-Flying, Protective)</button>
+  <div class="question-container">
+    <p>
+      As you wander, you hear a soft sobbing coming from a curled leaf. A tiny caterpillar is stuck, tangled in its own silk.<br><br>
+      <em>“Help me... I don’t want to miss the Moth Ball!”</em>
+    </p>
+    <div class="choices">
+      <button onclick="saveAnswer('A');">🎵 Gently untangle it with a whispered lullaby</button>
+      <button onclick="saveAnswer('B');">🌿 Create a mini-sling from vines to carry it</button>
+      <button onclick="saveAnswer('C');">💡 Cheer it up with a silly glow dance</button>
+      <button onclick="saveAnswer('D');">🌬️ Fly to get help, fast as the wind</button>
     </div>
   </div>
 
+  <script>
+    function saveAnswer(choice) {
+      let answers = JSON.parse(localStorage.getItem('fairyAnswers') || '[]');
+      answers.push(choice);
+      localStorage.setItem('fairyAnswers', JSON.stringify(answers));
+      window.location.href = 'q3.html'; // next question!
+    }
+  </script>
 </body>
 </html>
