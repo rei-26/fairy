@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fairy Quiz – Question 1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="question-container">
+    <h2>1. Your First Flutter 🧚‍♀️</h2>
+    <p>
+      You flutter your wings for the very first time as the morning mist rolls over Pixie Hollow. A warm breeze tickles your face, and Queen Clarion beckons you forward.<br><br>
+      She smiles gently and says,<br>
+      <em>“Every new fairy must take the path of discovery. Begin with a single step. Where will you go first?”</em>
+    </p>
+    <div class="choices">
+      <button onclick="saveAnswer('A');">🌌 To the crystal caves where echoes whisper secrets</button>
+      <button onclick="saveAnswer('B');">🌻 To the sunlit flower fields, where bees dance and colors burst</button>
+      <button onclick="saveAnswer('C');">🔧 Into the forest workshop where tools and gears glint</button>
+      <button onclick="saveAnswer('D');">☁️ Up, up, into the sky to chase the clouds</button>
+    </div>
+  </div>
+
+  <script>
+    function saveAnswer(choice) {
+      let answers = JSON.parse(localStorage.getItem('fairyAnswers') || '[]');
+      answers.push(choice);
+      localStorage.setItem('fairyAnswers', JSON.stringify(answers));
+      window.location.href = 'q2.html'; // next question
+    }
+  </script>
+</body>
+</html>
