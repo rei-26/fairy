@@ -2,60 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Pixie Hollow Quiz - Q4</title>
-  <style>
-    body {
-      background-color: #f4f0ff;
-      font-family: "Papyrus", fantasy;
-      padding: 40px;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: #ffffffbb;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(160, 130, 255, 0.3);
-    }
-    h2 {
-      text-align: center;
-    }
-    .option {
-      margin: 15px 0;
-    }
-    .option a {
-      text-decoration: none;
-      background-color: #dcd3ff;
-      padding: 12px 18px;
-      border-radius: 12px;
-      display: block;
-      color: #2c1e4a;
-      font-weight: bold;
-    }
-    .option a:hover {
-      background-color: #c1b2ff;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fairy Quiz – Question 4</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h2>Suddenly, a storm begins to brew!</h2>
     <p>Dark clouds rush in as the trees sway and tremble.<br>
     <em>“What do you do?”</em></p>
-
-    <div class="option">
-      <a href="q5.html">A) Sing a soft harmony to soothe the elements</a>
-    </div>
-    <div class="option">
-      <a href="q5.html">B) Build a shelter from sticks and mushrooms</a>
-    </div>
-    <div class="option">
-      <a href="q5.html">C) Usher small animals into burrows and nests</a>
-    </div>
-    <div class="option">
-      <a href="q5.html">D) Feel the storm’s energy pulse through you, wings sparking</a>
+    <div class="choices">
+      <button onclick="saveAnswer('A');">🎶 Sing a soft harmony to soothe the elements</button>
+      <button onclick="saveAnswer('B');">🍄 Build a shelter from sticks and mushrooms</button>
+      <button onclick="saveAnswer('C');">🛖 Usher small animals into burrows and nests</button>
+      <button onclick="saveAnswer('D');">🧚🏻‍♀️ Feel the storm’s energy pulse through you, wings sparking</button>
     </div>
   </div>
+
+  <script>
+    function saveAnswer(choice) {
+      let answers = JSON.parse(localStorage.getItem('fairyAnswers') || '[]');
+      answers.push(choice);
+      localStorage.setItem('fairyAnswers', JSON.stringify(answers));
+      window.location.href = 'q2.html'; // next question
+    }
+  </script>
 </body>
 </html>
