@@ -2,83 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>What Kind of Fairy Are You?</title>
-  <style>
-    body {
-      background: #fdf6f0;
-      font-family: 'Georgia', serif;
-      color: #4b2e2e;
-      max-width: 700px;
-      margin: auto;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      font-size: 2em;
-    }
-    .question {
-      margin-bottom: 30px;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px;
-      background: #fff8eb;
-      border: 1px solid #dcb;
-      cursor: pointer;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enter Pixie Hollow</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <h1>🧚 What Kind of Fairy Are You?</h1>
-  <p>Welcome to Pixie Hollow. Answer the story and find your fairy type!</p>
-
-  <div id="quiz"></div>
-
-  <button onclick="showResults()">Reveal My Fairy Type</button>
-
-  <script>
-    const questions = [
-      "You flutter your wings for the very first time... Where do you go first?",
-      "You hear sobbing from a curled leaf. What do you do?",
-      "You see a reflection of your truest self... What do you see?",
-      // Add more questions later
-    ];
-
-    const options = [
-      ["A) Crystal caves – secrets and echoes", "B) Flower fields – bees and bursts", "C) Workshop – tools and gears", "D) Sky – chasing clouds"],
-      ["A) Untangle with a lullaby", "B) Build a sling", "C) Glow dance cheer-up", "D) Fly for help"],
-      ["A) Calm, holding light", "B) Whirlwind of petals", "C) Wise with stars", "D) Mossy, earthy guide"]
-    ];
-
-    function showQuiz() {
-      const container = document.getElementById("quiz");
-      for (let i = 0; i < questions.length; i++) {
-        const qDiv = document.createElement("div");
-        qDiv.className = "question";
-        qDiv.innerHTML = `<p><strong>${i + 1}. ${questions[i]}</strong></p>`;
-        options[i].forEach((opt, j) => {
-          const radio = `<label><input type="radio" name="q${i}" value="${String.fromCharCode(65 + j)}"/> ${opt}</label><br/>`;
-          qDiv.innerHTML += radio;
-        });
-        container.appendChild(qDiv);
-      }
-    }
-
-    function showResults() {
-      const answers = [];
-      for (let i = 0; i < questions.length; i++) {
-        const radios = document.getElementsByName(`q${i}`);
-        let selected = "";
-        for (let r of radios) {
-          if (r.checked) selected = r.value;
-        }
-        answers.push(selected || "N/A");
-      }
-      alert("Your answers: " + answers.join(", ") + "\n✨ (Real results coming soon!)");
-    }
-
-    showQuiz();
-  </script>
+<body class="intro-page">
+  <div class="intro-container">
+    <h1>Welcome to Pixie Hollow 🌿✨</h1>
+    <p>
+      The breeze is soft, the petals shimmer, and magic stirs in the air...<br />
+      Are you ready to discover your fairy spirit?
+    </p>
+    <button onclick="window.location.href='q1.html'">🌸 Begin Your Journey</button>
+  </div>
 </body>
 </html>
